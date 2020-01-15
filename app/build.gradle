@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.xuli2.myapplication"
+        minSdkVersion 27
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs' // this way we can find the .aar file in libs folder
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'], exclude: [])
+//    implementation(name:'hwlocalAuthenticationKit-1.0.1',ext:'aar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //Toasty
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    //MD风格日历控件
+    implementation 'com.github.prolificinteractive:material-calendarview:1.6.0'
+    //加载动画库https://github.com/ybq/Android-SpinKit
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    //带文字的switch控件
+    implementation 'com.ld:switchView:1.1.7'
+    //圆角图片
+    implementation 'com.angel:SWImageView:1.0.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-32'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+}

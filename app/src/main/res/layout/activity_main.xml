@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="30dp"
+        android:text="Hello World!" />
+
+<!--    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动" />-->
+
+    <com.duma.ld.mylibrary.SwitchView
+        android:id="@+id/sv"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        app:time="500"
+        app:bgColor="#FC9D9A"
+        app:leftColor="#ffffff"
+        app:rightColor="#ffffff"
+        app:textLeft="照片"
+        app:textLeftColor="#fff"
+        app:textLeftClickColor="#FC9D9A"
+        app:textRight="视频"
+        app:textRightClickColor="#FC9D9A"
+        app:textRightColor="#fff" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textColor="#757575"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_horizontal"
+        android:text="清理缓存" />
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_showOtherDates="all"
+        app:mcv_weekDayLabels="@array/week_title"
+        app:mcv_selectionColor="#FC9D9A"
+        />
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
+</LinearLayout>
