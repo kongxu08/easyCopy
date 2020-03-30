@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.OutputStream;
 import java.io.Reader;
@@ -704,7 +705,7 @@ public class FileUtil {
      */
     public static File creatSDDir(String dirName) {
         File dir = new File(dirName);
-        dir.mkdir();
+        dir.mkdirs();
         return dir;
     }
 
@@ -878,4 +879,18 @@ public class FileUtil {
         }
     }
 
+    public static String getFromAssets(String fileName,Context context){
+        try {
+            InputStreamReader inputReader = new InputStreamReader( context.getResources().getAssets().open(fileName) );
+            BufferedReader bufReader = new BufferedReader(inputReader);
+            String line="";
+            String Result="";
+            while((line = bufReader.readLine()) != null)
+                Result += line+"\n";
+            return Result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

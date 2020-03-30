@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     SwitchView sv;
     ListView listView;
     HttpServer server;
-    Context context;
+    public static Context context;
 
     public static Map<String,List<String>> map_pic;
     public static Map<String,List<String>> map_vod;
@@ -68,9 +68,6 @@ public class MainActivity extends AppCompatActivity {
         //屏幕常亮
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        loadingView =LoadingUtil.creatLoadingView(this);
-        loadingView.setVisibility(View.GONE);
 
         list_uri_click = new ArrayList<>();
 
@@ -98,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         tv1 = findViewById(R.id.tv1);
-        tv1.setText("http://"+NetWorkUtils.getLocalIpAddress(this)+":8080");
+        tv1.setText("http://"+NetWorkUtils.getLocalIpAddress(this)+":8080/u");
         tv1.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
